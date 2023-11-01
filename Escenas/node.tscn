@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmnjvj7cb1eqd"]
+
+[ext_resource type="Script" path="res://script/Node.gd" id="1_ydrxl"]
+[ext_resource type="Texture2D" uid="uid://gm3dvfrkhsge" path="res://Assets/bosque.png" id="2_3l3b6"]
+[ext_resource type="PackedScene" uid="uid://bf5gdnp05e0pk" path="res://Escenas/player.tscn" id="3_0mt6i"]
+[ext_resource type="PackedScene" uid="uid://dh3qqlq23qcbk" path="res://Escenas/spawner.tscn" id="4_i61gj"]
+[ext_resource type="Script" path="res://Escenas/DeathScreen.gd" id="5_hfu5h"]
+[ext_resource type="AudioStream" uid="uid://bkphtc7hxrc4m" path="res://Assets/Sonidos/Daydream Anatomy - 8-Bit Heroes - 03 Nin10day.mp3" id="6_57emv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbd5j"]
+size = Vector2(323, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc88u"]
+size = Vector2(18, 138)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fu6n0"]
+font_size = 20
+
+[node name="Game" type="Node"]
+script = ExtResource("1_ydrxl")
+
+[node name="Bosque" type="Sprite2D" parent="."]
+position = Vector2(161.5, 90.5)
+scale = Vector2(0.250781, 0.248611)
+texture = ExtResource("2_3l3b6")
+
+[node name="Player" parent="." instance=ExtResource("3_0mt6i")]
+position = Vector2(164, 129)
+
+[node name="cajaCollision" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cajaCollision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cajaCollision/StaticBody2D"]
+position = Vector2(160, 160)
+shape = SubResource("RectangleShape2D_tbd5j")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="cajaCollision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cajaCollision/StaticBody2D2"]
+position = Vector2(162, -13)
+shape = SubResource("RectangleShape2D_tbd5j")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="cajaCollision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cajaCollision/StaticBody2D3"]
+position = Vector2(-10, 72)
+shape = SubResource("RectangleShape2D_kc88u")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="cajaCollision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cajaCollision/StaticBody2D4"]
+position = Vector2(331, 78)
+shape = SubResource("RectangleShape2D_kc88u")
+
+[node name="Spawner" parent="." instance=ExtResource("4_i61gj")]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 8.0
+offset_right = 195.0
+offset_bottom = 39.0
+text = "0"
+label_settings = SubResource("LabelSettings_fu6n0")
+
+[node name="DeathScreen" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("5_hfu5h")
+
+[node name="MsgLabel" type="Label" parent="DeathScreen"]
+offset_left = 106.0
+offset_top = 31.0
+offset_right = 217.0
+offset_bottom = 62.0
+text = "Game over!"
+label_settings = SubResource("LabelSettings_fu6n0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DeathScreen"]
+offset_left = 130.0
+offset_top = 53.0
+offset_right = 192.0
+offset_bottom = 93.0
+
+[node name="Label" type="Label" parent="DeathScreen/HBoxContainer"]
+layout_mode = 2
+text = "Score:"
+
+[node name="FinalScore" type="Label" parent="DeathScreen/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="ReiniciarButton" type="Button" parent="DeathScreen"]
+offset_left = 63.0
+offset_top = 82.0
+offset_right = 149.0
+offset_bottom = 113.0
+text = "Again"
+
+[node name="SalirButton" type="Button" parent="DeathScreen"]
+offset_left = 172.0
+offset_top = 83.0
+offset_right = 258.0
+offset_bottom = 114.0
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_57emv")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="DeathScreen/ReiniciarButton" to="DeathScreen" method="_on_reiniciar_button_pressed"]
+[connection signal="pressed" from="DeathScreen/SalirButton" to="DeathScreen" method="_on_salir_button_pressed"]
