@@ -4,12 +4,13 @@ extends Node
 var scoreJugador := 0
 var scores_a_llegar = {}
 var spawner = load("res://Escenas/spawner.tscn")
+var save_path = Global.save_path
 # Called when the node enters the scene tree for the first time.
 func _llenar_scores():
-	var spawner = 10
+	var repeat = 15
 	var spawner_inicial = 1
-	for i in range(0, spawner):
-		var score_random = randi_range(1,10) + spawner_inicial
+	for i in range(0, repeat):
+		var score_random = randi_range(1,7) + spawner_inicial
 		scores_a_llegar[score_random] = "Score para pasar " + str(score_random)
 		spawner_inicial = score_random
 	
@@ -25,4 +26,13 @@ func subirScore():
 func perder():
 	$DeathScreen/HBoxContainer/FinalScore.text = str(scoreJugador)
 	$DeathScreen.show()
+	save()
 	get_tree().paused = true
+
+func save():
+	Global.load_score()
+	if scoreJugador > Global.score_global:
+		Global.score_global = scoreJugador
+		var file = FileAccess.open(save_path,FileAccess.WRITE)
+		file.store_var(Global.score_global)
+

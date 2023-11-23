@@ -1,6 +1,7 @@
 extends Area2D
 var esManzana = false 
 var espina = preload("res://Assets/spike.png")
+
 var speed := 1.0
 func _ready():
 	if randf()>.5:

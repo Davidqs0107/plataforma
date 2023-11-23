@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pyx6aroaetmn"
+path="res://.godot/imported/8Bit DNA Loop.ogg-9d267c7aa174f8a87476fe8927131c57.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sonidos/8Bit DNA Loop.ogg"
+dest_files=["res://.godot/imported/8Bit DNA Loop.ogg-9d267c7aa174f8a87476fe8927131c57.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

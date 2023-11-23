@@ -8,48 +8,78 @@
 script = ExtResource("1_84r77")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(320, 0)
+motion_mirroring = Vector2(640, 0)
 
 [node name="Back" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(160, 80)
-scale = Vector2(0.833333, 0.666667)
+position = Vector2(320, 178.5)
+scale = Vector2(1.66667, 1.4875)
 texture = ExtResource("1_27v45")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.7, 0.7)
-motion_mirroring = Vector2(356, 0)
+motion_mirroring = Vector2(656, 0)
 
 [node name="Middle" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(26, 124)
+position = Vector2(26.4, 304.2)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")
 
 [node name="Middle2" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(78, 124)
+position = Vector2(78.4, 304.2)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")
 
 [node name="Middle3" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(130, 124)
+position = Vector2(130.4, 304.2)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")
 
 [node name="Middle4" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(175, 124)
+position = Vector2(183, 305)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pdwve")
+
+[node name="Middle8" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(379.4, 304.2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pdwve")
+
+[node name="Middle9" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(431.4, 304.2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pdwve")
+
+[node name="Middle10" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(483.4, 304.2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pdwve")
+
+[node name="Middle11" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(536, 305)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pdwve")
+
+[node name="Middle12" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(584, 305)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pdwve")
+
+[node name="Middle13" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(636, 305)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")
 
 [node name="Middle5" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(226.4, 124.2)
+position = Vector2(226.8, 304.4)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")
 
 [node name="Middle6" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(278.4, 124.2)
+position = Vector2(278.8, 304.4)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")
 
 [node name="Middle7" type="Sprite2D" parent="ParallaxLayer2"]
-position = Vector2(330.4, 124.2)
+position = Vector2(330.8, 304.4)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_pdwve")

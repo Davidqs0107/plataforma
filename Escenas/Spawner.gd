@@ -10,6 +10,6 @@ func _ready():
 func _on_timer_timeout():
 	dificultad += .01
 	var coleccionable = coleccionableEscena.instantiate()
-	coleccionable.global_position = Vector2(randi_range(10,305),20)
+	coleccionable.global_position = Vector2(randi_range(30,610),20)
 	coleccionable.speed += dificultad
 	add_child(coleccionable)
